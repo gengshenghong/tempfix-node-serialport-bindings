@@ -1,6 +1,6 @@
 {
   "name": "@asdftempfix/serialport-bindings",
-  "version": "9.0.2-1",
+  "version": "9.0.2-2",
   "main": "lib",
   "keywords": [
     "serialport-binding"
@@ -20,12 +20,7 @@
   "engines": {
     "node": ">=8.6.0"
   },
-  "scripts": {
-    "install": "prebuild-install --tag-prefix @serialport/bindings@ || node-gyp rebuild",
-    "lint": "cc --verbose",
-    "prebuild": "prebuild --all --force --strip --verbose --tag-prefix @serialport/bindings@",
-    "rebuild": "node-gyp rebuild"
-  },
+  "scripts": {},
   "publishConfig": {
     "access": "public"
   },
