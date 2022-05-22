@@ -216,16 +216,16 @@ void EIO_Update(uv_work_t* req) {
 void EIO_Set(uv_work_t* req) {
   SetBaton* data = static_cast<SetBaton*>(req->data);
 
-  if (data->rts) {
-    EscapeCommFunction(int2handle(data->fd), SETRTS);
-  } else {
-    EscapeCommFunction(int2handle(data->fd), CLRRTS);
-  }
-
   if (data->dtr) {
     EscapeCommFunction(int2handle(data->fd), SETDTR);
   } else {
     EscapeCommFunction(int2handle(data->fd), CLRDTR);
+  }
+
+  if (data->rts) {
+    EscapeCommFunction(int2handle(data->fd), SETRTS);
+  } else {
+    EscapeCommFunction(int2handle(data->fd), CLRRTS);
   }
 
   if (data->brk) {
